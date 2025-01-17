@@ -39,8 +39,7 @@ public class Interfaz extends javax.swing.JFrame {
         cbxMaterial = new javax.swing.JCheckBox();
         rbtMañana = new javax.swing.JRadioButton();
         rbtTarde = new javax.swing.JRadioButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtLista = new javax.swing.JList<>();
+        txtResultado = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,42 +92,29 @@ public class Interfaz extends javax.swing.JFrame {
         buttonGroup1.add(rbtTarde);
         rbtTarde.setText("Tarde");
 
-        txtLista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        txtResultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtResultadoActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(txtLista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(cbxAlmuerzo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                .addComponent(cbxTransporte)
-                .addGap(109, 109, 109)
-                .addComponent(cbxMaterial)
-                .addGap(52, 52, 52))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(127, 127, 127)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnMostrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1))
+                            .addComponent(btnMostrar)
                             .addComponent(btnRegistrar)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(rbtMañana)
                         .addGap(176, 176, 176)
-                        .addComponent(rbtTarde)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(37, 37, 37))
+                        .addComponent(rbtTarde)))
+                .addContainerGap(208, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,6 +128,17 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtEscrito)
                         .addGap(72, 72, 72))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(cbxAlmuerzo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cbxTransporte)
+                        .addGap(109, 109, 109)
+                        .addComponent(cbxMaterial))
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,16 +157,16 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(cbxAlmuerzo)
                     .addComponent(cbxMaterial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtMañana)
-                    .addComponent(rbtTarde))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtTarde)
+                    .addComponent(rbtMañana))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRegistrar)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMostrar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -185,10 +182,16 @@ public class Interfaz extends javax.swing.JFrame {
         boolean morning = rbtMañana.isSelected();
         boolean tarde = rbtTarde.isSelected();
         
+        String[] vector= new String[10];
+        for (int i=0; i<10; i++){
+            vector[i]= nombre;
+        }
+        
         String opcion;
         
         switch (opcion){
             case "almuerzo":
+                
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -208,6 +211,10 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxMaterialActionPerformed
 
+    private void txtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtResultadoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -222,12 +229,11 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbxMaterial;
     private javax.swing.JComboBox<String> cbxOpcions;
     private javax.swing.JCheckBox cbxTransporte;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JRadioButton rbtMañana;
     private javax.swing.JRadioButton rbtTarde;
     private javax.swing.JTextField txtEscrito;
-    private javax.swing.JList<String> txtLista;
+    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }
