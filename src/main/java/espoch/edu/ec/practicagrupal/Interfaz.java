@@ -26,6 +26,8 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
@@ -67,6 +69,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(cbxTransporte);
         cbxTransporte.setText("Transporte");
         cbxTransporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,8 +77,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(cbxAlmuerzo);
         cbxAlmuerzo.setText("Almuerzo");
 
+        buttonGroup2.add(cbxMaterial);
         cbxMaterial.setText("Material de Apoyo");
         cbxMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,8 +88,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(rbtMañana);
         rbtMañana.setText("Mañana");
 
+        buttonGroup1.add(rbtTarde);
         rbtTarde.setText("Tarde");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -156,7 +163,8 @@ public class Interfaz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+        String nombre = txtEscrito.getText();
+        String ocupacion= cbxOpcions.getName();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
@@ -183,6 +191,8 @@ public class Interfaz extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JCheckBox cbxAlmuerzo;
     private javax.swing.JCheckBox cbxMaterial;
     private javax.swing.JComboBox<String> cbxOpcions;
