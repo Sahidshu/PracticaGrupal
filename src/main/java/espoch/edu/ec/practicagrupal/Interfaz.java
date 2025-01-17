@@ -179,8 +179,7 @@ public class Interfaz extends javax.swing.JFrame {
         String nombre = txtEscrito.getText();
         String ocupacion= cbxOpcions.getName();
         
-<<<<<<< HEAD
-=======
+
         boolean almuerzo = cbxAlmuerzo.isSelected();
         boolean transporte = cbxTransporte.isSelected();
         boolean material = cbxMaterial.isSelected();
@@ -192,7 +191,7 @@ public class Interfaz extends javax.swing.JFrame {
         switch (opcion){
             case "almuerzo":
         }
->>>>>>> dev-Sahid
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
