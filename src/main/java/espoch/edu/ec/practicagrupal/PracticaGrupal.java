@@ -11,7 +11,6 @@ package espoch.edu.ec.practicagrupal;
 public class PracticaGrupal {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("hthj");
+        
     }
 }
