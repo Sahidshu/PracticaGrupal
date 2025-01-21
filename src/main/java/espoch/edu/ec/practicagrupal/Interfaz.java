@@ -160,9 +160,9 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(cbxAlmuerzo)
                     .addComponent(cbxMaterial))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtMañana)
-                    .addComponent(rbtTarde))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtTarde)
+                    .addComponent(rbtMañana))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnRegistrar)
                 .addGap(18, 18, 18)
@@ -188,9 +188,7 @@ public class Interfaz extends javax.swing.JFrame {
         
         String opcion;
         
-        switch (opcion){
-            case "almuerzo":
-        }
+      
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
