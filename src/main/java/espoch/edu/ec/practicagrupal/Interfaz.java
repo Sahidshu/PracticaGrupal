@@ -26,8 +26,8 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        btnTurno = new javax.swing.ButtonGroup();
+        btnOpcion = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
         btnRegistrar = new javax.swing.JButton();
         lblNombre = new javax.swing.JLabel();
@@ -39,8 +39,9 @@ public class Interfaz extends javax.swing.JFrame {
         cbxMaterial = new javax.swing.JCheckBox();
         rbtMañana = new javax.swing.JRadioButton();
         rbtTarde = new javax.swing.JRadioButton();
+        lblTurnno = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtLista = new javax.swing.JList<>();
+        txtaMostrarDatos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +72,7 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        btnOpcion.add(cbxTransporte);
         cbxTransporte.setText("Transporte");
         cbxTransporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,8 +80,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        btnOpcion.add(cbxAlmuerzo);
         cbxAlmuerzo.setText("Almuerzo");
 
+        btnOpcion.add(cbxMaterial);
         cbxMaterial.setText("Material de Apoyo");
         cbxMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,61 +91,70 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(rbtMañana);
+        btnTurno.add(rbtMañana);
         rbtMañana.setText("Mañana");
 
-        buttonGroup1.add(rbtTarde);
+        btnTurno.add(rbtTarde);
         rbtTarde.setText("Tarde");
-
-        txtLista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        rbtTarde.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtTardeActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(txtLista);
+
+        lblTurnno.setText("Turno: ");
+
+        txtaMostrarDatos.setColumns(20);
+        txtaMostrarDatos.setRows(5);
+        jScrollPane1.setViewportView(txtaMostrarDatos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(cbxAlmuerzo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                .addComponent(cbxTransporte)
-                .addGap(109, 109, 109)
-                .addComponent(cbxMaterial)
-                .addGap(52, 52, 52))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnMostrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jScrollPane1))
-                            .addComponent(btnRegistrar)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rbtMañana)
-                        .addGap(176, 176, 176)
-                        .addComponent(rbtTarde)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(37, 37, 37))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNombre)
-                    .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTitulo)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtEscrito)
-                        .addGap(72, 72, 72))))
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblNombre))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblTitulo)
+                                    .addComponent(txtEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(195, 195, 195)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(78, 78, 78)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btnMostrar)
+                                                .addGap(4, 4, 4))
+                                            .addComponent(btnRegistrar)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(rbtMañana)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(rbtTarde)))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(169, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cbxAlmuerzo)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(154, 154, 154)
+                                    .addComponent(cbxTransporte)
+                                    .addGap(109, 109, 109)
+                                    .addComponent(cbxMaterial)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(lblTurnno)
+                                .addGap(246, 246, 246)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,48 +167,64 @@ public class Interfaz extends javax.swing.JFrame {
                     .addComponent(txtEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxTransporte)
                     .addComponent(cbxAlmuerzo)
                     .addComponent(cbxMaterial))
+                .addGap(18, 18, 18)
+                .addComponent(lblTurnno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtMañana)
                     .addComponent(rbtTarde))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addComponent(btnRegistrar)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMostrar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(btnMostrar)
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    String [] datosUsuario=new String[6];
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         String nombre = txtEscrito.getText();
-        String ocupacion= cbxOpcions.getName();
-        
-
-        boolean almuerzo = cbxAlmuerzo.isSelected();
-        boolean transporte = cbxTransporte.isSelected();
-        boolean material = cbxMaterial.isSelected();
-        boolean morning = rbtMañana.isSelected();
+        String ocupacion= (String) cbxOpcions.getSelectedItem();
+        String almuerzo = Boolean.toString(cbxAlmuerzo.isSelected());
+        String transporte = Boolean.toString(cbxTransporte.isSelected());
+        String material = Boolean.toString(cbxMaterial.isSelected());
+        boolean mañana =rbtMañana.isSelected();
         boolean tarde = rbtTarde.isSelected();
         
-        String opcion;
-        
-        switch (opcion){
-            case "almuerzo":
+        String turno="";
+        if (mañana) {
+            turno="mañana";
+        } else if (tarde){
+            turno="tarde";
         }
+        
+        datosUsuario[0]=nombre;
+        datosUsuario[1]=ocupacion;
+        datosUsuario[2]=almuerzo;
+        datosUsuario[3]=transporte;
+        datosUsuario[4]=material;
+        datosUsuario[5]=turno;
+        
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
+        String datos = "";
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Datos: "+datosUsuario[i]);
+            datos=datos+","+datosUsuario[i];
+        }
+        txtaMostrarDatos.setText(datos);
+        
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void cbxOpcionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOpcionsActionPerformed
@@ -210,6 +239,10 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxMaterialActionPerformed
 
+    private void rbtTardeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtTardeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtTardeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -217,9 +250,9 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMostrar;
+    private javax.swing.ButtonGroup btnOpcion;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup btnTurno;
     private javax.swing.JCheckBox cbxAlmuerzo;
     private javax.swing.JCheckBox cbxMaterial;
     private javax.swing.JComboBox<String> cbxOpcions;
@@ -227,9 +260,10 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTurnno;
     private javax.swing.JRadioButton rbtMañana;
     private javax.swing.JRadioButton rbtTarde;
     private javax.swing.JTextField txtEscrito;
-    private javax.swing.JList<String> txtLista;
+    private javax.swing.JTextArea txtaMostrarDatos;
     // End of variables declaration//GEN-END:variables
 }
