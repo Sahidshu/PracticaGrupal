@@ -11,6 +11,7 @@ package espoch.edu.ec.practicagrupal;
 public class PracticaGrupal {
 
     public static void main(String[] args) {
-
+        Interfaz objInter = new Interfaz();
+        objInter.setVisible(true);
     }
 }
