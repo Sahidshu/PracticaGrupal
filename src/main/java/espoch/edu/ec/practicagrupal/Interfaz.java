@@ -42,12 +42,14 @@ public class Interfaz extends javax.swing.JFrame {
         lblTurnno = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtaMostrarDatos = new javax.swing.JTextArea();
+        lblServicios = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         lblTitulo.setText("Registro de Participantes:");
 
+        btnRegistrar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         btnRegistrar.setText("Registrar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,8 +57,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
-        lblNombre.setText("Nombre del Participante: ");
+        lblNombre.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
+        lblNombre.setText("Ingrese su Nombre");
 
+        btnMostrar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         btnMostrar.setText("Mostrar");
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,6 +77,7 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         btnOpcion.add(cbxTransporte);
+        cbxTransporte.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         cbxTransporte.setText("Transporte");
         cbxTransporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,9 +86,11 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         btnOpcion.add(cbxAlmuerzo);
+        cbxAlmuerzo.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         cbxAlmuerzo.setText("Almuerzo");
 
         btnOpcion.add(cbxMaterial);
+        cbxMaterial.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         cbxMaterial.setText("Material de Apoyo");
         cbxMaterial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,9 +99,11 @@ public class Interfaz extends javax.swing.JFrame {
         });
 
         btnTurno.add(rbtMañana);
+        rbtMañana.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         rbtMañana.setText("Mañana");
 
         btnTurno.add(rbtTarde);
+        rbtTarde.setFont(new java.awt.Font("Sitka Text", 0, 14)); // NOI18N
         rbtTarde.setText("Tarde");
         rbtTarde.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,11 +111,15 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        lblTurnno.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
         lblTurnno.setText("Turno: ");
 
         txtaMostrarDatos.setColumns(20);
         txtaMostrarDatos.setRows(5);
         jScrollPane1.setViewportView(txtaMostrarDatos);
+
+        lblServicios.setFont(new java.awt.Font("Serif", 1, 14)); // NOI18N
+        lblServicios.setText("Servicios Requeridos:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,76 +128,83 @@ public class Interfaz extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(33, 33, 33)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblNombre))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTitulo)
-                                    .addComponent(txtEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(195, 195, 195)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(78, 78, 78)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnMostrar)
-                                                .addGap(4, 4, 4))
-                                            .addComponent(btnRegistrar)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(rbtMañana)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(rbtTarde)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(169, Short.MAX_VALUE)
+                        .addGap(197, 197, 197)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cbxAlmuerzo)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(rbtMañana)
+                                .addGap(116, 116, 116)
+                                .addComponent(rbtTarde))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblTitulo)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(154, 154, 154)
-                                    .addComponent(cbxTransporte)
-                                    .addGap(109, 109, 109)
-                                    .addComponent(cbxMaterial)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblTurnno)
-                                .addGap(246, 246, 246)))))
-                .addContainerGap())
+                                    .addComponent(lblNombre)
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(6, 6, 6)
+                                            .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(5, 5, 5)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(279, 279, 279)
+                                        .addComponent(cbxMaterial))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbxAlmuerzo)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(116, 116, 116)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(lblServicios)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(lblTurnno)
+                                                        .addComponent(cbxTransporte)))))
+                                        .addGap(173, 173, 173)))))))
+                .addContainerGap(66, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(273, 273, 273))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(27, Short.MAX_VALUE)
                 .addComponent(lblTitulo)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNombre)
                     .addComponent(txtEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cbxOpcions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(16, 16, 16)
+                .addComponent(lblServicios)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxTransporte)
                     .addComponent(cbxAlmuerzo)
                     .addComponent(cbxMaterial))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTurnno)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(rbtMañana)
                     .addComponent(rbtTarde))
                 .addGap(28, 28, 28)
-                .addComponent(btnRegistrar)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnMostrar)
-                .addGap(27, 27, 27)
+                .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         pack();
@@ -193,17 +213,17 @@ public class Interfaz extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         String nombre = txtEscrito.getText();
         String ocupacion= (String) cbxOpcions.getSelectedItem();
-        String almuerzo = Boolean.toString(cbxAlmuerzo.isSelected());
-        String transporte = Boolean.toString(cbxTransporte.isSelected());
-        String material = Boolean.toString(cbxMaterial.isSelected());
+        String almuerzo = cbxAlmuerzo.isSelected()?"Almuerzo ":" ";
+        String transporte =cbxTransporte.isSelected()?"Transporte ":" ";
+        String material = cbxMaterial.isSelected()?"Material ":" ";
         boolean mañana =rbtMañana.isSelected();
         boolean tarde = rbtTarde.isSelected();
         
         String turno="";
         if (mañana) {
-            turno="mañana";
+            turno="Jordana de la mañana";
         } else if (tarde){
-            turno="tarde";
+            turno="Jornada de la tarde";
         }
         
         datosUsuario[0]=nombre;
@@ -212,19 +232,19 @@ public class Interfaz extends javax.swing.JFrame {
         datosUsuario[3]=transporte;
         datosUsuario[4]=material;
         datosUsuario[5]=turno;
-        
+
 
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
         String datos = "";
-        for (int i = 0; i < 6; i++) {
-            System.out.println("Datos: "+datosUsuario[i]);
-            datos=datos+","+datosUsuario[i];
-        }
-        txtaMostrarDatos.setText(datos);
         
+        for (int i = 0; i < 6; i++) {
+            System.out.println("Los datos del participante es: "+datosUsuario[i]);
+            datos=datos+","+datosUsuario[i];
+        } 
+            txtaMostrarDatos.setText(datos);
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void cbxOpcionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxOpcionsActionPerformed
@@ -259,6 +279,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JCheckBox cbxTransporte;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblServicios;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTurnno;
     private javax.swing.JRadioButton rbtMañana;
