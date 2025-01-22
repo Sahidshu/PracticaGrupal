@@ -232,8 +232,6 @@ public class Interfaz extends javax.swing.JFrame {
         datosUsuario[3]=transporte;
         datosUsuario[4]=material;
         datosUsuario[5]=turno;
-
-
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
